@@ -6,12 +6,15 @@ import result from './assets/music/resultBgm.mp3';
 
 export default function Sound(){
 
-    const [music, setMusic] = useState(Opening);
+    const [music, setMusic] = useState('');
     const location = useLocation();
 
     useEffect(()=>{
         console.log(location.pathname, music);
 
+        if(location.pathname === '/1'){
+            setMusic(Opening)
+        }
         if(location.pathname === '/4'){
             setMusic(bgm);
         } 
