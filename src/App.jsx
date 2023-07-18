@@ -14,7 +14,7 @@ import Move5 from './Move5';
 import Move6 from './Move6';
 import 'galmuri/dist/galmuri.css';
 import './App.css'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter, BrowserRouter } from 'react-router-dom';
 import Sound from './Sound';
 import Question1 from './Question1';
 import Question2 from './Question2';
