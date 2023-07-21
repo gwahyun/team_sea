@@ -540,51 +540,53 @@ export default function Result() {
   }, []);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <img className="h-1/2" src={resultImg} />
-      {show1 && (
-        <div className="text-center ">
-          <div className="flex justify-center flex-col">
-            <h1 className="font-bold text-xl ">{randomResult.one.kor}</h1>
-            <h2 className="align-top">{randomResult.one.eng}</h2>
+      <div className="absolute bottom-2 flex flex-col">
+        {show1 && (
+          <div className="text-center ">
+            <div className="flex justify-center flex-col">
+              <h1 className="font-bold text-xl ">{randomResult.one.kor}</h1>
+              <h2 className="align-top">{randomResult.one.eng}</h2>
+            </div>
           </div>
-        </div>
-      )}
-      {show2 && (
-        <div className="text-center">
-          <div className="flex justify-center flex-col">
-            <h1 className="font-bold text-xl ">{randomResult.two.kor}</h1>
-            <h2 className="align-top">{randomResult.two.eng}</h2>
+        )}
+        {show2 && (
+          <div className="text-center">
+            <div className="flex justify-center flex-col">
+              <h1 className="font-bold text-xl ">{randomResult.two.kor}</h1>
+              <h2 className="align-top">{randomResult.two.eng}</h2>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {show3 && (
-        <div className="text-center">
-          <div className="flex justify-center flex-col">
-            <h1 className="font-bold text-xl ">{randomResult.three.kor}</h1>
-            <h2 className="">{randomResult.three.eng}</h2>
+        {show3 && (
+          <div className="text-center">
+            <div className="flex justify-center flex-col">
+              <h1 className="font-bold text-xl ">{randomResult.three.kor}</h1>
+              <h2 className="">{randomResult.three.eng}</h2>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {show4 && (
-        <div className="text-center">
-          <div className="flex justify-center flex-col">
-            <h1 className="font-bold text-xl ">{randomResult.four.kor}</h1>
-            <h2 className="">{randomResult.four.eng}</h2>
+        {show4 && (
+          <div className="text-center">
+            <div className="flex justify-center flex-col">
+              <h1 className="font-bold text-xl ">{randomResult.four.kor}</h1>
+              <h2 className="">{randomResult.four.eng}</h2>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {show5 && (
-        <div className="text-center">
-          <div className="flex justify-center flex-col">
-            <h1 className="font-bold text-xl ">{randomResult.five.kor}</h1>
-            <h2 className="">{randomResult.five.eng}</h2>
+        {show5 && (
+          <div className="text-center">
+            <div className="flex justify-center flex-col">
+              <h1 className="font-bold text-xl ">{randomResult.five.kor}</h1>
+              <h2 className="">{randomResult.five.eng}</h2>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
