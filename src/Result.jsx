@@ -542,7 +542,7 @@ export default function Result() {
   return (
     <div className="flex flex-col items-center">
       <img className="h-1/2" src={resultImg} />
-      <div className="absolute bottom-2 flex flex-col">
+      <div className="absolute top-[70%] flex flex-col">
         {show1 && (
           <div className="text-center ">
             <div className="flex justify-center flex-col">
