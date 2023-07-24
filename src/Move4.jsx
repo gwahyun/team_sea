@@ -4,15 +4,17 @@ import { useEffect, useState } from "react";
 import human4 from "./assets/walk4.gif";
 
 export default function Move4() {
+  const [gif, setGif] = useState('');
   const navigate = useNavigate();
   useEffect(() => {
+    setTimeout(()=> setGif(human4), 0);
     setTimeout(() => navigate("/11"), 9000);
   }, []);
 
   return (
     <div className="flex flex-col">
       <img className="relative" src={mainArt} />
-      <img className="" src={human4} />
+      <img className="" src={gif} />
     </div>
   );
 }
