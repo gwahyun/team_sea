@@ -7,8 +7,9 @@ export default function Question6 (){
     return(
     <div className='flex justify-center'>
     <img className='relative' src={mainArt}/>
-  <Link to={'/result'} className="absolute">
-  <img src={q}/>
+    <img className="absolute" src={q}/>
+  <Link to={'/result'} >
+  <div className='absolute bottom-0 right-[45%] w-[10%] h-[38%] opacity-0'>_</div>
   </Link>
     </div>)
 }
