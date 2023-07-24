@@ -9,7 +9,7 @@ export default function Question3 (){
     <img className='relative' src={mainArt}/>
     <img src={q}  className="absolute"/>
   <Link to={'/10'}>
-  <div className='absolute bottom-0 right-[25%] w-[50%] h-[40%] opacity-0 '>_</div>
+  <div className='absolute bottom-0 right-[25%] w-[50%] h-[40%] opacity-0'>_</div>
   </Link>
     </div>)
 }
