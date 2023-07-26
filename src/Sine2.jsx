@@ -36,7 +36,7 @@ export default function Sine2() {
   }, []);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center fade-in">
       <img className="relative" src={mainArt} />
       {show === false ? (
         <div className="absolute bottom-[8%] text-center ">

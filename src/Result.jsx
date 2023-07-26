@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import resultImg from "./assets/result.gif";
 import { useEffect, useState } from "react";
 
@@ -509,8 +510,9 @@ export default function Result() {
   const [show3, setShow3] = useState(false);
   const [show4, setShow4] = useState(false);
   const [show5, setShow5] = useState(false);
+  const [show6, setShow6] = useState(false);
   const randomIndex = Math.floor(Math.random() * result.length);
-
+  const navigate = useNavigate();
   const [randomResult, setRandomResult] = useState(result[randomIndex]);
 
   useEffect(() => {
@@ -537,11 +539,19 @@ export default function Result() {
         setShow5(true);
       }, 10000);
     }
+    setTimeout(() => setShow6(true), 6000);
   }, []);
 
   return (
     <div className="flex flex-col items-center">
+      {show6 && (
+        <button className="fade-in underline" onClick={() => navigate("/")}>
+          Go to main screen
+        </button>
+      )}
+
       <img className="h-1/2" src={resultImg} />
+
       <div className="absolute top-[70%] flex flex-col">
         {show1 && (
           <div className="text-center ">
