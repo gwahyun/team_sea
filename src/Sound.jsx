@@ -9,7 +9,8 @@ export default function Sound() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/") {
+
+    if (location.pathname === "/start") {
       setMusic(Opening);
     }
     if (location.pathname === "/4") {
@@ -19,7 +20,9 @@ export default function Sound() {
     if (location.pathname === "/result") {
       setMusic(result);
     }
+
+    console.log(music);
   }, [location.pathname]);
 
-  return <audio src={music} autoPlay={true} loop="true" />;
+  return <audio src={music} autoPlay={true} loop={true} />;
 }

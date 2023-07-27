@@ -28,7 +28,8 @@ function App() {
     <>
       <Sound />
       <Routes>
-        <Route path="/" element={<GameMain3 />} />
+        <Route path='/' element={<GameMain2/>}/>
+        <Route path="/start" element={<GameMain3 />} />
         <Route path="/1" element={<Sine1 />} />
         <Route path="/2" element={<Sine2 />} />
         <Route path="/3" element={<Sine3 />} />

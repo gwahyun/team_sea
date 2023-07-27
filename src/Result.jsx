@@ -3,6 +3,26 @@ import resultImg from "./assets/result.gif";
 import { useEffect, useState } from "react";
 
 export default function Result() {
+
+  const test={
+    one: {
+      kor: "당신은 아름다운 신입니다.",
+      eng: "You are a beautiful god.",
+    },
+    two: {
+      kor: "인간들은 당신을 기적이라고 부릅니다.",
+      eng: "Mortals call you a miracle.",
+    },
+    three: {
+      kor: "현존하는 인간 중 가장 부드러운 육체를 지닌, 탄생의 기원과 우주의 비밀을 알고 있는 초월적인 존재라고 부릅니다.",
+      eng: "They believe that you are an absolute being covered with the softest body among any living mortals and know the origin of life, the secret of the universe.",
+    },
+    four: {
+      kor: "하지만 아이러니하게도 아무도 당신을 두려워 하지 않습니다. 오로지 당신만 인간이 두렵습니다.",
+      eng: "But ironically, nobody is afraid of you. Only you are afraid of them.",
+    },
+  }
+
   const result = [
     {
       one: {
@@ -550,9 +570,9 @@ export default function Result() {
         </button>
       )}
 
-      <img className="h-1/2" src={resultImg} />
+      <img style={{height:'40rem'}} src={resultImg} />
 
-      <div className="absolute top-[70%] flex flex-col">
+      <div className="absolute top-[60%] flex flex-col">
         {show1 && (
           <div className="text-center ">
             <div className="flex justify-center flex-col">
