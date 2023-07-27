@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import mainArt from "./assets/2.gif";
 import startButton from "./assets/startButton.png";
 import { useNavigate } from "react-router-dom";
+import opening from './assets/music/opening.mp3';
 export default function GameMain3({changeMusic}) {
   const navigate = useNavigate();
 
@@ -12,7 +13,7 @@ export default function GameMain3({changeMusic}) {
         src={startButton}
         className="absolute cursor-pointer fade-in"
         onClick={() => {
-          changeMusic("./assets/music/opening.mp3");
+          changeMusic(opening);
           navigate("/1");
         }}
       />

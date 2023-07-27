@@ -22,6 +22,9 @@ import Question6 from "./Question6";
 import Result from "./Result";
 import "galmuri/dist/galmuri.css";
 import "./App.css";
+import opening from './assets/music/opening.mp3';
+import bgm from './assets/music/bgm.mp3';
+import result from './assets/music/resultBgm.mp3';
 
 function App() {
   const [musicURL, setMusicURL] = useState("");
@@ -51,20 +54,21 @@ function App() {
     }
 
     if (location.pathname === "/" && musicURL) {
-      startAudio("./assets/music/opening.mp3");
+      startAudio(opening);
     }
     if (location.pathname === "/1" && musicURL) {
       startAudio(musicURL);
     }
     if (location.pathname === "/4") {
-      startAudio("./assets/music/bgm.mp3");
+      startAudio(bgm);
     }
     if (location.pathname === "/result") {
-      startAudio("./assets/music/resultBgm.mp3");
+      startAudio(result);
     }
   }, [audioContext, musicURL, location.pathname]);
 
   function changeMusic(url) {
+    console.log('changeMusic');
     setMusicURL(url);
   }
 
