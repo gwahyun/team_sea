@@ -1,8 +1,9 @@
-import { useState } from "react";
-import GameMain from "./GameMain";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Routes, Route, HashRouter, BrowserRouter } from "react-router-dom";
+import { AudioContext } from 'standardized-audio-context';
 import GameMain2 from "./GameMain2";
 import GameMain3 from "./GameMain3";
-import GameMain4 from "./GameMain4";
 import Sine1 from "./Sine1";
 import Sine2 from "./Sine2";
 import Sine3 from "./Sine3";
@@ -12,10 +13,6 @@ import Move3 from "./Move3";
 import Move4 from "./Move4";
 import Move5 from "./Move5";
 import Move6 from "./Move6";
-import "galmuri/dist/galmuri.css";
-import "./App.css";
-import { Routes, Route, HashRouter, BrowserRouter } from "react-router-dom";
-import Sound from "./Sound";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
 import Question3 from "./Question3";
@@ -23,13 +20,60 @@ import Question4 from "./Question4";
 import Question5 from "./Question5";
 import Question6 from "./Question6";
 import Result from "./Result";
+import "galmuri/dist/galmuri.css";
+import "./App.css";
+
 function App() {
+  const [musicURL, setMusicURL] = useState("");
+  const [audioContext, setAudioContext] = useState(null);
+  const [sources, setSources] = useState([]);
+  const location = useLocation();
+
+  useEffect(() => {
+    const startAudio = async (url) => {
+      if (!audioContext) {
+        const context = new AudioContext();
+        setAudioContext(context);
+      } else {
+        for (let source of sources) {
+          source.stop();
+        }
+        const audio = await fetch(url);
+        const buffer = await audio.arrayBuffer();
+        const decoded = await audioContext.decodeAudioData(buffer);
+        const source = audioContext.createBufferSource();
+        source.loop = true;
+        source.buffer = decoded;
+        source.connect(audioContext.destination);
+        source.start(0);
+        sources.push(source);
+      }
+    }
+
+    if (location.pathname === "/" && musicURL) {
+      startAudio("./assets/music/opening.mp3");
+    }
+    if (location.pathname === "/1" && musicURL) {
+      startAudio(musicURL);
+    }
+    if (location.pathname === "/4") {
+      startAudio("./assets/music/bgm.mp3");
+    }
+    if (location.pathname === "/result") {
+      startAudio("./assets/music/resultBgm.mp3");
+    }
+  }, [audioContext, musicURL, location.pathname]);
+
+  function changeMusic(url) {
+    setMusicURL(url);
+  }
+
   return (
     <>
-      <Sound />
       <Routes>
+        {/* 최초 AudioContext의 생성은 유저 인터랙션을 통해야 함 */}
         <Route path='/' element={<GameMain2/>}/>
-        <Route path="/start" element={<GameMain3 />} />
+        <Route path="/start" element={<GameMain3  changeMusic={changeMusic} />} />
         <Route path="/1" element={<Sine1 />} />
         <Route path="/2" element={<Sine2 />} />
         <Route path="/3" element={<Sine3 />} />
