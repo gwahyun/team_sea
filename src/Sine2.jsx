@@ -37,9 +37,9 @@ export default function Sine2() {
 
   return (
     <div className="flex justify-center fade-in">
-      <img className="relative" src={mainArt} />
+      <img className="relative w-[80%]" src={mainArt} />
       {show === false ? (
-        <div className="absolute bottom-[8%] text-center ">
+        <div className="absolute bottom-[30%] text-center ">
           <div className="flex justify-center flex-col">
             <h1 className="font-bold text-xl text-white">{text.kor}</h1>
             <h2 className="text-white ">{text.eng}</h2>
@@ -47,7 +47,7 @@ export default function Sine2() {
         </div>
       ) : (
         <button
-          className="absolute bottom-[8%] flex justify-center"
+          className="absolute bottom-[20%] flex justify-center"
           onClick={() => navigate("/3")}
         >
           <img src={yesButton} className="w-[50%] h-[50%]" />

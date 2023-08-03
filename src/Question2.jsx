@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import q from "./assets/11q.png";
 export default function Question2() {
   return (
-    <div className="flex">
-      <img className="relative" src={mainArt} />
-      <img className="absolute" src={q} />
-      <Link to={"/8"} >
-        <div className='absolute bottom-0 right-[25%] w-[40%] h-[40%] opacity-0'>_</div>
+    <div className="flex justify-center">
+      <img className="relative w-[80%]" src={mainArt} />
+      <img className="absolute w-[50%]" src={q} />
+      <Link to={"/8"}>
+        <div className="absolute bottom-28 right-[30%] w-[40%] h-[40%] bg-red-100 opacity-0">
+          _
+        </div>
       </Link>
     </div>
   );

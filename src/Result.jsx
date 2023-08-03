@@ -3,8 +3,7 @@ import resultImg from "./assets/result.gif";
 import { useEffect, useState } from "react";
 
 export default function Result() {
-
-  const test={
+  const test = {
     one: {
       kor: "당신은 아름다운 신입니다.",
       eng: "You are a beautiful god.",
@@ -21,7 +20,7 @@ export default function Result() {
       kor: "하지만 아이러니하게도 아무도 당신을 두려워 하지 않습니다. 오로지 당신만 인간이 두렵습니다.",
       eng: "But ironically, nobody is afraid of you. Only you are afraid of them.",
     },
-  }
+  };
 
   const result = [
     {
@@ -570,7 +569,7 @@ export default function Result() {
         </button>
       )}
 
-      <img style={{height:'40rem'}} src={resultImg} />
+      <img style={{ height: "40rem" }} src={resultImg} />
 
       <div className="absolute top-[60%] flex flex-col">
         {show1 && (

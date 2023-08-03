@@ -8,8 +8,8 @@ export default function Sine1() {
   }, []);
   return (
     <div className="flex justify-center">
-      <img className="relative" src={mainArt} />
-      <div className="absolute bottom-[8%] text-center">
+      <img className="relative w-[80%]" src={mainArt} />
+      <div className="absolute bottom-[30%] text-center">
         <h1 className="font-bold text-xl text-white">신</h1>
         <h2 className="text-white ">God</h2>
       </div>
